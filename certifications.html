@@ -11,6 +11,8 @@
             font-family: Arial, sans-serif;
             background-color: #e6f7ff; /* Baby blue background */
             display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .sidebar {
@@ -40,7 +42,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 100vh;
             background-color: #125c8c; /* Baby blue background */
         }
 
@@ -58,45 +59,18 @@
         }
 
         .certifications {
-            position: relative;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            height: calc(100vh - 140px); /* Subtract header and footer heights */
-            padding-top: 60px; /* Offset for fixed header */
-        }
-
-        .certifications-slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 300%; /* Adjust based on number of images */
-        }
-
-        .certifications img {
-            min-width: 100%;
-            flex: 1;
-        }
-
-        .controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .controls button {
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
+            flex-direction: column;
+            padding: 20px;
+            margin-top: 80px; /* Offset for fixed header */
             color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1.2rem;
+            align-items: center;
         }
 
-        .controls button:hover {
-            background: rgba(0, 0, 0, 0.8);
+        .certification {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
         }
 
         .footer {
@@ -108,23 +82,6 @@
             position: relative;
         }
     </style>
-    <script>
-        let currentIndex = 0;
-
-        function showNext() {
-            const slider = document.querySelector('.certifications-slider');
-            const totalImages = slider.children.length;
-            currentIndex = (currentIndex + 1) % totalImages;
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        function showPrev() {
-            const slider = document.querySelector('.certifications-slider');
-            const totalImages = slider.children.length;
-            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-    </script>
 </head>
 <body>
     <div class="sidebar">
@@ -142,14 +99,23 @@
 
     <div class="content">
         <div class="certifications">
-            <div class="certifications-slider">
-                <img src="https://imgur.com/JFRZzDq" alt="Google Certified in Cybersecurity">
-                <img src="https://imgur.com/xv6hVCf" alt="CompTIA Security+ Certificate">
-                <img src="https://imgur.com/YR5rXsm" alt="ISC2 CC Certificate">
+            <div class="certification">
+                <blockquote class="imgur-embed-pub" lang="en" data-id="JFRZzDq">
+                    <a href="https://imgur.com/JFRZzDq">View post on imgur.com</a>
+                </blockquote>
+                <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
             </div>
-            <div class="controls">
-                <button onclick="showPrev()">&#8592;</button>
-                <button onclick="showNext()">&#8594;</button>
+            <div class="certification">
+                <blockquote class="imgur-embed-pub" lang="en" data-id="EXAMPLE2">
+                    <a href="https://imgur.com/EXAMPLE2">View post on imgur.com</a>
+                </blockquote>
+                <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+            </div>
+            <div class="certification">
+                <blockquote class="imgur-embed-pub" lang="en" data-id="EXAMPLE3">
+                    <a href="https://imgur.com/EXAMPLE3">View post on imgur.com</a>
+                </blockquote>
+                <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
             </div>
         </div>
         <div class="footer">
