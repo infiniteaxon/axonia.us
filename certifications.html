@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axonia - Certifications</title>
+    <link rel="stylesheet" href="certifications.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff; /* Baby blue background */
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #ffffff; /* White sidebar */
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+            border-right: 1px solid #dddddd;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333333;
+        }
+
+        .sidebar a.active {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-left: 250px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            background-color: #125c8c; /* Baby blue background */
+        }
+
+        .header {
+            background: #ffffff; /* Header background color */
+            color: #125c8c; /* Header text color */
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #dddddd;
+            width: calc(100% - 250px); /* Fill space between sidebar and right edge */
+            position: fixed;
+            top: 0;
+            left: 250px;
+            z-index: 1000;
+        }
+
+        .certifications {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 140px); /* Subtract header and footer heights */
+            padding-top: 60px; /* Offset for fixed header */
+        }
+
+        .certifications-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%; /* Adjust based on number of images */
+        }
+
+        .certifications img {
+            min-width: 100%;
+            flex: 1;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .controls button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .controls button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .footer {
+            background: #ffffff; /* Footer background color */
+            color: #125c8c; /* Footer text color */
+            text-align: center;
+            border-top: 1px solid #dddddd;
+            width: 100%; /* Fill entire width */
+            position: relative;
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+
+        function showNext() {
+            const slider = document.querySelector('.certifications-slider');
+            const totalImages = slider.children.length;
+            currentIndex = (currentIndex + 1) % totalImages;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function showPrev() {
+            const slider = document.querySelector('.certifications-slider');
+            const totalImages = slider.children.length;
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="certifications.html" class="active">Certifications</a>
+        <a href="videos.html">Videos</a>
+        <a href="https://tryhackme.com">TryHackMe</a>
+        <a href="https://github.com">GitHub</a>
+    </div>
+
+    <div class="header">
+        <h1>Certifications</h1>
+    </div>
+
+    <div class="content">
+        <div class="certifications">
+            <div class="certifications-slider">
+                <img src="INSERT_TRYHACKME_CERTIFICATE_URL" alt="TryHackMe Certificate">
+                <img src="INSERT_SECURITYPLUS_CERTIFICATE_URL" alt="CompTIA Security+ Certificate">
+                <img src="INSERT_ISC2_CERTIFICATE_URL" alt="ISC2 Certificate">
+            </div>
+            <div class="controls">
+                <button onclick="showPrev()">&#8592;</button>
+                <button onclick="showNext()">&#8594;</button>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Axonia - All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

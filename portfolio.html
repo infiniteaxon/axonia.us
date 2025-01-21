@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axonia - Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff; /* Baby blue background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #ffffff; /* White sidebar */
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+            border-right: 1px solid #dddddd;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333333;
+        }
+
+        .sidebar a.active {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-left: 250px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #125c8c; /* Baby blue background */
+        }
+
+        .header {
+            background: #ffffff; /* Header background color */
+            color: #125c8c; /* Header text color */
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #dddddd;
+            width: calc(100% - 250px); /* Fill space between sidebar and right edge */
+            position: fixed;
+            top: 0;
+            left: 250px;
+            z-index: 1000;
+        }
+
+        .portfolio {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            margin-top: 80px; /* Offset for fixed header */
+            color: white;
+        }
+
+        .portfolio-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #125c8c;
+        }
+
+        .portfolio-item h3 {
+            margin: 0;
+        }
+
+        .portfolio-item p {
+            margin: 5px 0;
+        }
+
+        .portfolio-item a {
+            color: #125c8c;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #ffffff; /* Footer background color */
+            color: #125c8c; /* Footer text color */
+            text-align: center;
+            border-top: 1px solid #dddddd;
+            width: 100%; /* Fill entire width */
+            position: relative;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="videos.html">Videos</a>
+        <a href="https://tryhackme.com">TryHackMe</a>
+        <a href="https://github.com">GitHub</a>
+    </div>
+
+    <div class="header">
+        <h1>Portfolio</h1>
+    </div>
+
+    <div class="content">
+        <div class="portfolio">
+            <div class="portfolio-item">
+                <h3>#0010 - CompTIA Security+ & Homelab</h3>
+                <p>I am happy to announce I have passed the CompTIA Security+ Certification exam!</p>
+                <a href="INSERT_BLOG_LINK">Continue Reading</a>
+            </div>
+            <div class="portfolio-item">
+                <h3>#0009 - Egypt & Italy</h3>
+                <p>This Summer, I had the wonderful opportunity to learn and explore new environments...</p>
+                <a href="INSERT_BLOG_LINK">Continue Reading</a>
+            </div>
+            <div class="portfolio-item">
+                <h3>#0008 - Winter Break 2024</h3>
+                <p>A reflection on how I spent my winter break and prepared for new challenges ahead...</p>
+                <a href="INSERT_BLOG_LINK">Continue Reading</a>
+            </div>
+            <div class="portfolio-item">
+                <h3>#0007 - Networking Adventures</h3>
+                <p>Documenting my journey of setting up a home network lab and what I learned...</p>
+                <a href="INSERT_BLOG_LINK">Continue Reading</a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Axonia - All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

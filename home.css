@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background: #0d1117;
+}
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background: #ffffff;
+  padding-top: 20px;
+  border-right: 1px solid #dddddd;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: #333333;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.sidebar a.active {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.home {
+  height: 100vh;
+  background: url('INSERT_BACKGROUND_IMAGE') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 3rem;
+}
+
+.intro p {
+  font-size: 1.2rem;
+}
+
+.intro a {
+  padding: 10px 20px;
+  color: white;
+  border: 2px solid white;
+  text-decoration: none;
+}
+
+.intro a:hover {
+  background: white;
+  color: black;
+}
