@@ -71,16 +71,22 @@
             transition: transform 0.5s ease-in-out;
             width: 100%; /* Allow full slider width */
             height: 100%; /* Match parent container height */
-            justify-content: center;
-            align-items: center;
         }
 
         .certifications img {
-            max-width: 90%; /* Adjust image size responsively */
-            max-height: 80%; /* Prevent overflow */
-            margin: auto;
+            width: auto;
+            max-width: 80%; /* Adjust image size responsively */
+            max-height: 70%; /* Prevent overflow */
+            margin: 0 auto; /* Center image */
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .certifications-slider > * {
+            flex: 0 0 100%; /* Each image takes full width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .controls {
@@ -149,9 +155,15 @@
     <div class="content">
         <div class="certifications">
             <div class="certifications-slider">
-                <img src="https://i.imgur.com/JFRZzDq.jpg" alt="Google Certified in Cybersecurity">
-                <img src="https://i.imgur.com/xv6hVCf.jpg" alt="CompTIA Security+ Certificate">
-                <img src="https://i.imgur.com/YR5rXsm.jpg" alt="ISC2 CC Certificate">
+                <div>
+                    <img src="https://i.imgur.com/JFRZzDq.jpg" alt="Google Certified in Cybersecurity">
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/xv6hVCf.jpg" alt="CompTIA Security+ Certificate">
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/YR5rXsm.jpg" alt="ISC2 CC Certificate">
+                </div>
             </div>
             <div class="controls">
                 <button onclick="showPrev()">&#8592;</button>
